@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:text="Welcome back"
             android:textColor="@color/Black2"
-            android:textSize="30dp"
+            android:textSize="40dp"
             android:textStyle="bold"/>
 
         <LinearLayout
@@ -44,7 +44,7 @@
             android:orientation="vertical"
             android:gravity="center"
             android:background="@drawable/btn_pink"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="100dp">
 
             <EditText
                 android:id="@+id/editEMAIL1"
@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:text="Forgot your password"
                 android:textColor="@color/white"
-                android:textStyle="bold"
+
                 android:layout_marginBottom="0dp" />
 
             <TextView
@@ -111,6 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Create new"
+                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:layout_marginBottom="40dp" />
 

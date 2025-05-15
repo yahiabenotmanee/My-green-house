@@ -32,12 +32,15 @@ public class Login_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Intent intent = new Intent(Login_activity.this, MainActivity.class);
+                startActivity(intent);
+                //finish();
+
+
                 if (email_text.isEmpty()||pass_text.isEmpty()){
                     Toast.makeText(Login_activity.this, "Fill your email and password !", Toast.LENGTH_SHORT).show();
                 }else {
-                    Intent intent = new Intent(Login_activity.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                  //
                 }
             }
         });

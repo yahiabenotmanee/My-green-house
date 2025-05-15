@@ -1,10 +1,14 @@
 package com.univbechar.mygreenhouse;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,6 +24,14 @@ public class Signup_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        // Change the status bar color
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.p4));
+        }
 
         txt_fullname=findViewById(R.id.edit_fullname);
         txt_email=findViewById(R.id.edit_email);
@@ -37,19 +49,33 @@ public class Signup_Activity extends AppCompatActivity {
         String password=txt_pass.getText().toString();
         String confirm_password=txt_cpass.getText().toString();
 
+
+
+
         btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(Signup_Activity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+
+
              if (fullname.isEmpty()||email.isEmpty()||phone.isEmpty()||password.isEmpty()||confirm_password.isEmpty()) {
                  Toast.makeText(Signup_Activity.this, "Fill your infos !", Toast.LENGTH_SHORT).show();
-             }else {}
+             }else {
+
+                 /*Intent intent = new Intent(Signup_Activity.this, MainActivity.class);
+                 startActivity(intent);
+                 finish();*/
+
+             }
             }
         });
 
         txt_myacc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Signup_Activity.this, MainActivity.class);
+                Intent intent = new Intent(Signup_Activity.this, Login_activity.class);
                 startActivity(intent);
                 finish();
             }
