@@ -59,7 +59,6 @@ btn_done.setOnClickListener(new View.OnClickListener() {
 
 
     // CHIFFREMENT
-
     public static String encrypt(String plainText, String secretKey) throws Exception {
         SecretKey key = generateKey(secretKey);
         Cipher cipher = Cipher.getInstance(ALGORITHM);
