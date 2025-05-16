@@ -38,7 +38,7 @@ public class Login_activity extends AppCompatActivity {
 
 
                 if (email_text.isEmpty()||pass_text.isEmpty()){
-                    Toast.makeText(Login_activity.this, "Fill your email and password !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login_activity.this, "Fill your email and password !!!", Toast.LENGTH_SHORT).show();
                 }else {
                   //
                 }
