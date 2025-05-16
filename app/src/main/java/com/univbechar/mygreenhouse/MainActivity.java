@@ -27,8 +27,16 @@ import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.Base64;
 
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+
+public class MainActivity extends AppCompatActivity {
+    private static final String ALGORITHM = "AES";
+    private static final int KEY_SIZE = 256;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +65,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    // CHIFFREMENT
+    public static String encrypt(String plainText, String secretKey) throws Exception {
+        SecretKey key = generateKey(secretKey);
+        Cipher cipher = Cipher.getInstance(ALGORITHM);
+        cipher.init(Cipher.ENCRYPT_MODE, key);
+
+        byte[] encryptedBytes = cipher.doFinal(plainText.getBytes());
+        return Base64.getEncoder().encodeToString(encryptedBytes);
+    }
+
+    public static String decrypt(String encryptedText, String secretKey) throws Exception {
+        SecretKey key = generateKey(secretKey);
+        Cipher cipher = Cipher.getInstance(ALGORITHM);
+        cipher.init(Cipher.DECRYPT_MODE, key);
+
+        byte[] encryptedBytes = Base64.getDecoder().decode(encryptedText);
+        byte[] decryptedBytes = cipher.doFinal(encryptedBytes);
+        return new String(decryptedBytes);
+    }
+
+    private static SecretKey generateKey(String secretKey) throws Exception {
+        KeyGenerator keyGenerator = KeyGenerator.getInstance(ALGORITHM);
+        keyGenerator.init(KEY_SIZE);
+        return new SecretKeySpec(secretKey.getBytes(), ALGORITHM);
+    }
+    // BEFORE END
 
 
 
