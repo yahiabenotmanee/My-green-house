@@ -32,7 +32,7 @@ public class Login_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(Login_activity.this, MainActivity.class);
+                Intent intent = new Intent(Login_activity.this, data_enc_Activity.class);
                 startActivity(intent);
                 //finish();
 
