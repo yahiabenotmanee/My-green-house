@@ -23,9 +23,8 @@ public class data_enc_Activity extends AppCompatActivity {
     Button btn_done;
     TextView tx_out1,tx_out2;
 
-
-
     private static final String ALGORITHM = "AES";
+
     private static final int KEY_SIZE = 256;
 
     @SuppressLint("MissingInflatedId")
@@ -45,19 +44,12 @@ btn_done.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
 
-
-
-
         Intent intent = new Intent(data_enc_Activity.this, MainActivity.class);
         startActivity(intent);
         finish();
     }
 });
 
-
     }
-
-
-
 
 }

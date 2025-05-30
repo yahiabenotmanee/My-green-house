@@ -43,58 +43,57 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnlogout = findViewById(R.id.btn_logout);
-        Button btn_history=findViewById(R.id.btn_history);
-
-        btn_history.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, History_Activity.class);
-                startActivity(intent);
-
-            }
-        });
-
-
-        btnlogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Login_activity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+//        Button btnlogout = findViewById(R.id.btn_logout);
+//        Button btn_history=findViewById(R.id.btn_history);
+//
+//        btn_history.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, History_Activity.class);
+//                startActivity(intent);
+//
+//            }
+//        });
+//
+//
+//        btnlogout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, Login_activity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
+//    }
+//
+//
+//    // CHIFFREMENT
+//    public static String encrypt(String plainText, String secretKey) throws Exception {
+//        SecretKey key = generateKey(secretKey);
+//        Cipher cipher = Cipher.getInstance(ALGORITHM);
+//        cipher.init(Cipher.ENCRYPT_MODE, key);
+//
+//        byte[] encryptedBytes = cipher.doFinal(plainText.getBytes());
+//        return Base64.getEncoder().encodeToString(encryptedBytes);
+//    }
+//
+//    public static String decrypt(String encryptedText, String secretKey) throws Exception {
+//        SecretKey key = generateKey(secretKey);
+//        Cipher cipher = Cipher.getInstance(ALGORITHM);
+//        cipher.init(Cipher.DECRYPT_MODE, key);
+//
+//        byte[] encryptedBytes = Base64.getDecoder().decode(encryptedText);
+//        byte[] decryptedBytes = cipher.doFinal(encryptedBytes);
+//        return new String(decryptedBytes);
+//    }
+//
+//    private static SecretKey generateKey(String secretKey) throws Exception {
+//        KeyGenerator keyGenerator = KeyGenerator.getInstance(ALGORITHM);
+//        keyGenerator.init(KEY_SIZE);
+//        return new SecretKeySpec(secretKey.getBytes(), ALGORITHM);
     }
 
-
-    // CHIFFREMENT
-    public static String encrypt(String plainText, String secretKey) throws Exception {
-        SecretKey key = generateKey(secretKey);
-        Cipher cipher = Cipher.getInstance(ALGORITHM);
-        cipher.init(Cipher.ENCRYPT_MODE, key);
-
-        byte[] encryptedBytes = cipher.doFinal(plainText.getBytes());
-        return Base64.getEncoder().encodeToString(encryptedBytes);
-    }
-
-    public static String decrypt(String encryptedText, String secretKey) throws Exception {
-        SecretKey key = generateKey(secretKey);
-        Cipher cipher = Cipher.getInstance(ALGORITHM);
-        cipher.init(Cipher.DECRYPT_MODE, key);
-
-        byte[] encryptedBytes = Base64.getDecoder().decode(encryptedText);
-        byte[] decryptedBytes = cipher.doFinal(encryptedBytes);
-        return new String(decryptedBytes);
-    }
-
-    private static SecretKey generateKey(String secretKey) throws Exception {
-        KeyGenerator keyGenerator = KeyGenerator.getInstance(ALGORITHM);
-        keyGenerator.init(KEY_SIZE);
-        return new SecretKeySpec(secretKey.getBytes(), ALGORITHM);
-    }
     // BEFORE END
-
-
 
     }
 
