@@ -262,7 +262,7 @@
                 android:background="@drawable/bachground_button_white">
 
                 <ImageView
-                    android:id="@+id/nav_settings"
+                    android:id="@+id/img_history"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -271,7 +271,7 @@
                     android:padding="5dp"/>
 
                 <ImageView
-                    android:id="@+id/nav_stats"
+                    android:id="@+id/img_graph"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -280,7 +280,7 @@
                     android:padding="5dp"/>
 
                 <ImageView
-                    android:id="@+id/nav_alerts"
+                    android:id="@+id/img_logout"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
