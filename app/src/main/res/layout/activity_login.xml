@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,120 +8,124 @@
     android:background="@color/white"
     tools:context=".Login_activity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="20dp">
 
+        <!-- Logo (Centered & Better Sizing) -->
         <ImageView
             android:id="@+id/imageViewSCAN"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="150dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/eco"
             />
 
+        <!-- Welcome Message (More Balanced) -->
         <TextView
-            android:layout_width="330dp"
-            android:layout_height="240dp"
-            android:text="WELCOME BACK TO YOUR GREEN HOUSE"
-            android:textSize="50dp"
-            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Welcome Back!"
+            android:textAlignment="center"
             android:textColor="@color/green"
-            android:layout_marginTop="50dp" />
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_width="330dp"
-            android:layout_height="70dp"
-            android:text="Go to your dashboard now "
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/text_color_description"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Manage your green home efficiently"
+            android:textAlignment="center"
+            android:textColor="@color/text_color_description"
+            android:textSize="16sp" />
 
-
+        <!-- Login Form (Better Spacing) -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:orientation="vertical"
-            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:background="@drawable/bachground_button_green"
-            android:layout_marginTop="100dp">
+            android:orientation="vertical"
+            android:padding="24dp">
 
+            <!-- Email Input -->
             <EditText
                 android:id="@+id/editEMAIL1"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/input_strock_white"
-                android:ems="10"
-                android:hint="emait or number phone"
-                android:inputType="text"
-                android:minHeight="48dp"
+                android:hint="Email or phone number"
+                android:inputType="textEmailAddress|phone"
                 android:padding="15dp"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="15dp"
-                android:layout_margin="20dp"
-                />
+                android:textColorHint="@color/white" />
 
+            <!-- Password Input -->
             <EditText
                 android:id="@+id/editPassword1"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/input_strock_white"
-                android:hint="password"
+                android:hint="Password"
                 android:inputType="textPassword"
-                android:minHeight="48dp"
                 android:padding="15dp"
-                android:textColor="@color/Black2"
-                android:textColorHint="@color/white"
-                android:textSize="15dp"
-                android:layout_marginBottom="5dp" />
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
 
-            <CheckBox
-                android:id="@+id/checkBox_agree"
-                android:layout_width="200dp"
+            <!-- Remember Me & Forgot Password -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Remmember me "
-                android:layout_marginRight="50dp"
-                android:textColor="@color/pink1"
-                android:layout_marginBottom="10dp"
-                android:checked="true"
-                android:outlineSpotShadowColor="@color/Pup"/>
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
 
+                <CheckBox
+                    android:id="@+id/checkBox_agree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Remember me"
+                    android:textColor="@color/white" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tx_forgot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Forgot password?"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- Login Button -->
             <Button
                 android:id="@+id/button_login1"
-                android:layout_width="180dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/btn_white"
-                android:text="Log in"
+                android:text="Log In"
                 android:textColor="@color/green"
-                android:textStyle="bold"
-                android:layout_marginBottom="10dp"/>
+                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tx_forgot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Forgot your password"
-                android:textColor="@color/white"
-
-                android:layout_marginBottom="0dp" />
-
+            <!-- Sign Up Link -->
             <TextView
                 android:id="@+id/tx_creat"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Create new"
-                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Don’t have an account? Sign Up"
                 android:textColor="@color/white"
-                android:layout_marginBottom="40dp" />
-
+                android:textStyle="bold" />
         </LinearLayout>
-
-
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
